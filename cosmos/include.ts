@@ -1,0 +1,1 @@
+import '@workspace-example/styles';
