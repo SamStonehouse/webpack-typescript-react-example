@@ -1,1 +1,10 @@
 @use './fonts.scss';
+
+html {
+  font-family: pt-sans, sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}

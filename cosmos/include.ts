@@ -1,1 +1,1 @@
-import '@workspace-example/styles';
+import '../source/styles/common.scss';
