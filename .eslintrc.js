@@ -13,21 +13,14 @@ module.exports = {
         browser: true,
       },
       files: ['*.ts', '*.tsx'],
-      plugins: ['@typescript-eslint', "react-hooks", "prettier"],
+      plugins: ['@typescript-eslint', "import", "react-hooks", "prettier"],
       extends: [
         'airbnb',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
-        // 'plugin:prettier/recommended',
       ],
       rules: {
-        '@typescript-eslint/no-explicit-any': 0,
-        '@typescript-eslint/member-delimiter-style': 0,
-        '@typescript-eslint/interface-name-prefix': 0,
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"],
-        'react/jsx-filename-extension': [2, { 'extensions': ['.tsx'] }],
         "import/extensions": [
           "error",
           "ignorePackages",
@@ -38,9 +31,36 @@ module.exports = {
             "tsx": "never"
           }
         ],
-        "jsx-quotes": ["error", "prefer-single"],
         "import/prefer-default-export": "off",
-        "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.spec.ts", "**/*.spec.tsx"] }]
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.spec.ts", "**/*.spec.tsx"] }],
+  
+        '@typescript-eslint/no-explicit-any': 0,
+        '@typescript-eslint/member-delimiter-style': 0,
+        '@typescript-eslint/interface-name-prefix': 0,
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+
+        'react/jsx-filename-extension': [2, { 'extensions': ['.tsx'] }],
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/no-array-index-key": "off",
+        "react/require-default-props": "off",
+
+        "jsx-a11y/label-has-associated-control": "off",
+        "jsx-quotes": ["error", "prefer-single"],
+
+        "arrow-body-style": "off",
+        "max-len": ["error", { "code": 260, "tabWidth": 2 }],
+        "no-case-declarations": "off",
+        "no-multiple-empty-lines": "off",
+        "no-nested-ternary": "off",
+        "no-plusplus": "off",
+        "no-shadow": "off",
+        "no-underscore-dangle": "off",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
       },
       settings: {
         "react": {
@@ -48,9 +68,16 @@ module.exports = {
           "version": "detect"
         },
         "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true,
+            "project": ".",
+          },
           "node": {
             "extensions": [".js", ".jsx", ".ts", ".tsx"]
-          }
+          },
+        },
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"]
         },
       },
     },

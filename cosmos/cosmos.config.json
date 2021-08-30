@@ -4,5 +4,5 @@
     "configPath": "./cosmos/webpack.cosmos.js"
   },
   "rootDir": "..",
-  "globalImports": ["source/styles/common.scss"]
+  "staticPath": "public"
 }

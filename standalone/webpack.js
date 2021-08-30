@@ -16,6 +16,7 @@ module.exports = (env) => {
     htmlTemplate: path.join(ENTRY_DIR, 'index.html'),
     production: env.NODE_ENV !== 'development',
     tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+    port: 8080,
   })({
     entry: path.resolve(ENTRY_DIR, 'entry.tsx'),
     output: {

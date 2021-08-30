@@ -23,7 +23,10 @@ module.exports = curry(
                 options: {
                   sourceMap: true,
                   importLoaders: 1,
-                  modules: true,
+                  modules: {
+                    localIdentName: opts.production ? '[hash:base64]' : '[name]-[hash:base64]', // Add name to dev to help a little with component identification in dev tools
+                    exportLocalsConvention: 'dashes',
+                  },
                 }
               },
               { loader: 'resolve-url-loader' },
